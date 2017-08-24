@@ -1,11 +1,11 @@
 <?php
 /**
- * @copyright Copyright (c) 2015 Yiister
- * @license https://github.com/yiister/yii2-adminlte/blob/master/LICENSE
+ * @copyright Copyright (c) 2015 Factor Energia
+ * @license https://github.com/factorenergia/yii2-adminlte/blob/master/LICENSE
  * @link http://adminlte.yiister.ru
  */
 
-namespace yiister\adminlte\widgets;
+namespace factorenergia\adminlte\widgets;
 
 use rmrevin\yii\fontawesome\component\Icon;
 use yii\helpers\ArrayHelper;
@@ -66,7 +66,7 @@ class Menu extends \yii\widgets\Menu
                         : ''
                     ) . (
                     isset($item['items']) && count($item['items']) > 0
-                        ? new Icon('fa fa-angle-left pull-right')
+                        ? new Icon('angle-left', ['class' => 'pull-right'])
                         : ''
                     ),
             ]

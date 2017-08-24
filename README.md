@@ -11,13 +11,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-composer require --prefer-dist yiister/yii2-adminlte "~1.0"
+composer require --prefer-dist factorenergia/yii2-adminlte "*"
 ```
 
 or add the following to the `require` section of your `composer.json`
 
 ```json
-"yiister/yii2-adminlte": "~1.0"
+"factorenergia/yii2-adminlte": "*"
 ```
 ## Demonstration
 

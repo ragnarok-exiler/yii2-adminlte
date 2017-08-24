@@ -1,11 +1,11 @@
 <?php
 /**
- * @copyright Copyright (c) 2015 Yiister
- * @license https://github.com/yiister/yii2-adminlte/blob/master/LICENSE
+ * @copyright Copyright (c) 2015 Factor Energia
+ * @license https://github.com/factorenergia/yii2-adminlte/blob/master/LICENSE
  * @link http://adminlte.yiister.ru
  */
 
-namespace yiister\adminlte\widgets;
+namespace factorenergia\adminlte\widgets;
 
 use yii\base\Widget;
 use yii\helpers\Html;
