@@ -30,6 +30,11 @@ class Box extends Widget
     public $header;
 
     /**
+     * @var string header text
+     */
+    public $footer;
+
+    /**
      * @var string icon name
      */
     public $icon;
@@ -118,6 +123,9 @@ class Box extends Widget
     public function run()
     {
         echo Html::endTag('div');
+        if (!empty($this->footer)) {
+            echo Html::tag('div', $this->footer, ['class' => 'box-footer']);
+        }
         echo Html::endTag('div');
         parent::run();
     }
