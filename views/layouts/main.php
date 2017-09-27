@@ -92,7 +92,8 @@ desired effect
                                         <a href="#">
                                             <div class="pull-left">
                                                 <!-- User Image -->
-                                                <img src="http://placehold.it/160x160" class="img-circle" alt="User Image">
+                                                <img src="http://placehold.it/160x160" class="img-circle"
+                                                     alt="User Image">
                                             </div>
                                             <!-- Message title and timestamp -->
                                             <h4>
@@ -153,7 +154,9 @@ desired effect
                                             <!-- The progress bar -->
                                             <div class="progress xs">
                                                 <!-- Change the css width attribute to simulate progress -->
-                                                <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                                                     role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                     aria-valuemax="100">
                                                     <span class="sr-only">20% Complete</span>
                                                 </div>
                                             </div>
@@ -237,8 +240,9 @@ desired effect
             <form action="#" method="get" class="sidebar-form">
                 <div class="input-group">
                     <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                    <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
+                            class="fa fa-search"></i></button>
               </span>
                 </div>
             </form>
@@ -248,6 +252,11 @@ desired effect
             <?=
             \factorenergia\adminlte\widgets\Menu::widget(
                 [
+                    'options' => [
+                        'data' => [
+                            'widget' => 'tree'
+                        ]
+                    ],
                     "items" => [
                         ["label" => "Home", "url" => "/", "icon" => "home"],
                         ["label" => "Layout", "url" => ["site/layout"], "icon" => "files-o"],
