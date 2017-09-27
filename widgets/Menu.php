@@ -39,6 +39,11 @@ class Menu extends \yii\widgets\Menu
     public $activateParents = true;
 
     /**
+     * @inheritdoc
+     */
+    public $activeCssClass = 'menu-open';
+
+    /**
      * @var bool whether to add menu searching or not (Searching in the menu elements).
      */
     public $menuSearching = false;
@@ -58,15 +63,17 @@ class Menu extends \yii\widgets\Menu
                             'placeholder' => 'Buscar elemento del menú...',
                             'class' => 'form-control sideSearch'
                         ]) .
-                        Html::tag('span', new  Icon('search'), ['class' => 'form-control-feedback kv-feedback-default']), [
+                        Html::tag('span', new  Icon('search'),
+                            ['class' => 'form-control-feedback kv-feedback-default']), [
                             'class' => 'has-feedback'
                         ]), [
                         'class' => 'sidebar-form'
-                    ]).Html::tag('span', '',
+                    ]) . Html::tag('span', '',
                     ['class' => 'menu-separator', 'style' => 'display: block; border-bottom: solid 1px #D2D6DE;']);
         }
 
         Html::addCssClass($this->options, 'sidebar-menu');
+        $this->options['data']['widget'] = 'tree';
         parent::init();
     }
 
@@ -118,6 +125,11 @@ class Menu extends \yii\widgets\Menu
             $items[$i]['label'] = $encodeLabel ? Html::encode($item['label']) : $item['label'];
             $hasActiveChild = false;
             if (isset($item['items'])) {
+                if (isset($items[$i]['options']['class'])) {
+                    $items[$i]['options']['class'] .= ' treeview';
+                } else {
+                    $items[$i]['options']['class'] = 'treeview';
+                }
                 $items[$i]['items'] = $this->normalizeItems($item['items'], $hasActiveChild);
                 if (empty($items[$i]['items']) && $this->hideEmptyItems) {
                     unset($items[$i]['items']);
