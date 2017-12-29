@@ -9,6 +9,10 @@ namespace factorenergia\adminlte\components;
 
 class AdminLTE
 {
+    /* Default BG CSS Classes */
+    const BG_GRAY = 'bg-gray';
+    const BG_GRAY_LIGHT = 'bg-gray-light';
+    const BG_BLACK = 'bg-black';
     const BG_RED = 'bg-red';
     const BG_YELLOW = 'bg-yellow';
     const BG_AQUA = 'bg-aqua';
@@ -23,7 +27,10 @@ class AdminLTE
     const BG_FUCHSIA = 'bg-fuchsia';
     const BG_PURPLE = 'bg-purple';
     const BG_MAROON = 'bg-maroon';
-    const BG_BLACK = 'bg-black';
+
+    /* Active BG CSS Classes */
+    const BG_GRAY_ACTIVE = 'bg-gray-active';
+    const BG_BLACK_ACTIVE = 'bg-black-active';
     const BG_RED_ACTIVE = 'bg-red-active';
     const BG_YELLOW_ACTIVE = 'bg-yellow-active';
     const BG_AQUA_ACTIVE = 'bg-aqua-active';
@@ -38,5 +45,16 @@ class AdminLTE
     const BG_FUCHSIA_ACTIVE = 'bg-fuchsia-active';
     const BG_PURPLE_ACTIVE = 'bg-purple-active';
     const BG_MAROON_ACTIVE = 'bg-maroon-active';
-    const BG_BLACK_ACTIVE = 'bg-black-active';
+
+    /* Gradient BG CSS Classes */
+    const BG_TEAL_GRADIENT = 'bg-teal-gradient';
+    const BG_LIGHT_BLUE_GRADIENT = 'bg-light-blue-gradient';
+    const BG_BLUE_GRADIENT = 'bg-blue-gradient';
+    const BG_AQUA_GRADIENT = 'bg-aqua-gradient';
+    const BG_YELLOW_GRADIENT = 'bg-yellow-gradient';
+    const BG_PURPLE_GRADIENT = 'bg-purple-gradient';
+    const BG_GREEN_GRADIENT = 'bg-green-gradient';
+    const BG_RED_GRADIENT = 'bg-red-gradient';
+    const BG_BLACK_GRADIENT = 'bg-black-gradient';
+    const BG_MAROON_GRADIENT = 'bg-maroon-gradient';
 }
