@@ -5,7 +5,7 @@
  * @link http://adminlte.yiister.ru
  */
 
-namespace factorenergia\adminlte\components;
+namespace ragnarokexiler\adminlte\components;
 
 class AdminLTE
 {
