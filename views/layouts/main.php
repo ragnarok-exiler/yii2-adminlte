@@ -6,7 +6,7 @@
 
 use yii\helpers\Html;
 
-factorenergia\adminlte\assets\Asset::register($this);
+ragnarokexiler\adminlte\assets\Asset::register($this);
 
 ?>
 <?php $this->beginPage() ?>
@@ -250,7 +250,7 @@ desired effect
 
             <!-- Sidebar Menu -->
             <?=
-            \factorenergia\adminlte\widgets\Menu::widget(
+            \ragnarokexiler\adminlte\widgets\Menu::widget(
                 [
                     'options' => [
                         'data' => [
@@ -289,7 +289,7 @@ desired effect
                                     "icon" => "table",
                                     "badge" => "123",
                                     "badgeOptions" => [
-                                        "class" => \factorenergia\adminlte\components\AdminLTE::BG_BLUE,
+                                        "class" => \ragnarokexiler\adminlte\components\AdminLTE::BG_BLUE,
                                     ],
                                 ],
                             ],
@@ -365,7 +365,7 @@ desired effect
             Anything you want
         </div>
         <!-- Default to the left -->
-        Copyright &copy; Factor Energia <?= date("Y") ?>
+        Copyright &copy; Brand <?= date("Y") ?>
     </footer>
 
     <!-- Control Sidebar -->
