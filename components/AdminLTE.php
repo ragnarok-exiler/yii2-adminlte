@@ -1,7 +1,7 @@
 <?php
 /**
  * @copyright Copyright (c) 2015 Factor Energia
- * @license https://github.com/factorenergia/yii2-adminlte/blob/master/LICENSE
+ * @license https://github.com/ragnarok-exiler/yii2-adminlte/blob/master/LICENSE
  * @link http://adminlte.yiister.ru
  */
 
