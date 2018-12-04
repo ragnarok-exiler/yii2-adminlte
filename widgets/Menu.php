@@ -101,7 +101,7 @@ class Menu extends \yii\widgets\Menu
                         : ''
                     ) . (
                     isset($item['items']) && count($item['items']) > 0
-                        ? new Icon('chevron-left', ['class' => 'pull-right'])
+                        ? new Icon('angle-left', ['class' => 'pull-right'])
                         : ''
                     ),
             ]
