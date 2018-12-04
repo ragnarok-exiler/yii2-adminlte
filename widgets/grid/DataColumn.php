@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright Copyright (c) 2015 Factor Energia
+ * @copyright Copyright (c) 2015 Ragnarok-Exiler
  * @license https://github.com/ragnarok-exiler/yii2-adminlte./blob/master/LICENSE
  * @link http://adminlte.yiister.ru
  */
