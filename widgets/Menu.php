@@ -55,7 +55,6 @@ class Menu extends \yii\widgets\Menu
 
     public function init()
     {
-
         if ($this->menuSearching) {
             echo Html::tag('div',
                     Html::tag('div',
