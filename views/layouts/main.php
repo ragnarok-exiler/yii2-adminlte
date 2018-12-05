@@ -59,13 +59,7 @@ desired effect
     <!-- Main Header -->
     <header class="main-header">
 
-        <!-- Logo -->
-        <a href="/" class="logo">
-            <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
-            <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Admin</b>LTE</span>
-        </a>
+
 
         <!-- Header Navbar -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -176,14 +170,14 @@ desired effect
                             <!-- The user image in the navbar-->
                             <img src="http://placehold.it/160x160" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">Alexander Pierce</span>
+                            <span class="hidden-xs">User</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
                                 <img src="http://placehold.it/160x160" class="img-circle" alt="User Image">
                                 <p>
-                                    Alexander Pierce - Web Developer
+                                    User - Web Developer
                                     <small>Member since Nov. 2012</small>
                                 </p>
                             </li>
@@ -219,44 +213,36 @@ desired effect
         </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-
+    <aside class="main-sidebar sidebar-dark-primary">
+        <!-- Logo -->
+        <a href="/" class="brand-link bg-primary">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <img src="dist/img/AdminLTELogo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">AdminLTE 3</span>
+        </a>
         <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-
+        <div class="sidebar">
             <!-- Sidebar user panel (optional) -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="http://placehold.it/45x45" class="img-circle" alt="User Image">
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <img src="http://placehold.it/45x45" class="img-circle" alt="User">
                 </div>
-                <div class="pull-left info">
-                    <p>Alexander Pierce</p>
+                <div class="info">
+                    <a href="#" class="d-block">User</a>
                     <!-- Status -->
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
-
-            <!-- search form (Optional) -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
-                    <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
-                            class="fa fa-search"></i></button>
-              </span>
-                </div>
-            </form>
-            <!-- /.search form -->
-
             <!-- Sidebar Menu -->
             <?=
             \ragnarokexiler\adminlte\widgets\Menu::widget(
                 [
-                    'options' => [
-                        'data' => [
-                            'widget' => 'tree'
-                        ]
-                    ],
+//                    'options' => [
+//                        'data' => [
+//                            'widget' => 'tree'
+//                        ]
+//                    ],
+                    'menuSearching' => true,
                     "items" => [
                         ["label" => "Home", "url" => "/", "icon" => "home"],
                         ["label" => "Layout", "url" => ["site/layout"], "icon" => "files-o"],
@@ -289,7 +275,7 @@ desired effect
                                     "icon" => "table",
                                     "badge" => "123",
                                     "badgeOptions" => [
-                                        "class" => \ragnarokexiler\adminlte\components\AdminLTE::BG_BLUE,
+                                        "class" => \ragnarokexiler\adminlte\components\AdminLTE::BG_AQUA,
                                     ],
                                 ],
                             ],
@@ -325,7 +311,7 @@ desired effect
                 ]
             )
             ?>
-        </section>
+        </div>
         <!-- /.sidebar -->
     </aside>
 

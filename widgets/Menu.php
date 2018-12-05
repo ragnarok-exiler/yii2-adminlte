@@ -26,12 +26,12 @@ class Menu extends \yii\widgets\Menu
     /**
      * @inheritdoc
      */
-    public $linkTemplate = '<a href="{url}">{icon}<span>{label}</span>{badge}</a>';
+    public $linkTemplate = '<a href="{url}" class="nav-link">{icon} <p>{label}{badge}</p></a>';
 
     /**
      * @inheritdoc
      */
-    public $submenuTemplate = "\n<ul class=\"treeview-menu\">\n{items}\n</ul>\n";
+    public $submenuTemplate = "\n<ul class=\"nav nav-treeview\">\n{items}\n</ul>\n";
 
     /**
      * @inheritdoc
@@ -68,11 +68,13 @@ class Menu extends \yii\widgets\Menu
                         ]), [
                         'class' => 'sidebar-form'
                     ]) . Html::tag('span', '',
-                    ['class' => 'menu-separator', 'style' => 'display: block; border-bottom: solid 1px #D2D6DE;']);
+                    ['class' => 'menu-separator', 'style' => 'display: block; border-bottom: solid 1px #D2D6DE; margin:10px 0;']);
         }
 
-        Html::addCssClass($this->options, 'sidebar-menu');
-        $this->options['data']['widget'] = 'tree';
+        Html::addCssClass($this->options, 'nav nav-sidebar flex-column');
+        $this->options['data']['widget'] = 'treeview';
+        $this->options['data']['accordion'] = 'false';
+        $this->options['role'] = 'menu';
         parent::init();
     }
 
@@ -81,26 +83,43 @@ class Menu extends \yii\widgets\Menu
      */
     protected function renderItem($item)
     {
+
         $renderedItem = parent::renderItem($item);
         if (isset($item['badge'])) {
             $badgeOptions = ArrayHelper::getValue($item, 'badgeOptions', []);
-            Html::addCssClass($badgeOptions, 'label pull-right');
+            Html::addCssClass($badgeOptions, 'badge right');
         } else {
             $badgeOptions = null;
         }
+
+        if (isset($item['icon'])) {
+            $iconOptions = ArrayHelper::getValue($item, 'iconOptions', []);
+
+            Html::addCssClass($iconOptions, 'nav-icon');
+
+//            if (isset($iconOptions['class'])) {
+//                $iconOptions['class'] .= ' nav-icon';
+//            } else {
+//                $iconOptions['class'] = 'nav-icon';
+//            }
+
+            $icon = new Icon($item['icon'], $iconOptions);
+        } else {
+
+            $icon = '';
+        }
+
         return strtr(
             $renderedItem,
             [
-                '{icon}' => isset($item['icon'])
-                    ? new Icon($item['icon'], ArrayHelper::getValue($item, 'iconOptions', []))
-                    : '',
+                '{icon}' => $icon,
                 '{badge}' => (
                     isset($item['badge'])
-                        ? Html::tag('small', $item['badge'], $badgeOptions)
+                        ? Html::tag('span', $item['badge'], $badgeOptions)
                         : ''
                     ) . (
                     isset($item['items']) && count($item['items']) > 0
-                        ? new Icon('angle-left', ['class' => 'pull-right'])
+                        ? new Icon('angle-left', ['class' => 'right'])
                         : ''
                     ),
             ]
@@ -117,6 +136,11 @@ class Menu extends \yii\widgets\Menu
                 unset($items[$i]);
                 continue;
             }
+            if (isset($items[$i]['options']['class'])) {
+                $items[$i]['options']['class'] .= ' nav-item';
+            } else {
+                $items[$i]['options']['class'] = 'nav-item';
+            }
             if (!isset($item['label'])) {
                 $item['label'] = '';
             }
@@ -124,11 +148,9 @@ class Menu extends \yii\widgets\Menu
             $items[$i]['label'] = $encodeLabel ? Html::encode($item['label']) : $item['label'];
             $hasActiveChild = false;
             if (isset($item['items'])) {
-                if (isset($items[$i]['options']['class'])) {
-                    $items[$i]['options']['class'] .= ' treeview';
-                } else {
-                    $items[$i]['options']['class'] = 'treeview';
-                }
+
+                $items[$i]['options']['class'] .= ' has-treeview';
+
                 $items[$i]['items'] = $this->normalizeItems($item['items'], $hasActiveChild);
                 if (empty($items[$i]['items']) && $this->hideEmptyItems) {
                     unset($items[$i]['items']);
@@ -144,9 +166,9 @@ class Menu extends \yii\widgets\Menu
                     $active = $items[$i]['active'] = true;
                     if ($activeItem) {
                         if (isset($items[$i]['options']['class'])) {
-                            $items[$i]['options']['class'] .= ' current';
+                            $items[$i]['options']['class'] .= ' active';
                         } else {
-                            $items[$i]['options']['class'] = 'current';
+                            $items[$i]['options']['class'] = 'active';
                         }
                     }
                 } else {
