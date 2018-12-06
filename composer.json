@@ -35,9 +35,9 @@
     "php": ">=5.4.0",
     "yiisoft/yii2": ">=2.0.5",
     "yiisoft/yii2-bootstrap": "*",
-    "rmrevin/yii2-fontawesome": "2.*",
+    "rmrevin/yii2-fontawesome": "3.0.0",
     "yiisoft/yii2-bootstrap4": "1.0.x@dev",
-    "almasaeed2010/adminlte": "3.0.x@alpha"
+    "almasaeed2010/adminlte": "3.0.0-alpha.2"
   },
   "autoload": {
     "psr-4": {
