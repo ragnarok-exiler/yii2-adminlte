@@ -30,13 +30,12 @@
     "issues": "https://github.com/ragnarok-exiler/yii2-adminlte/issues",
     "source": "https://github.com/ragnarok-exiler/yii2-adminlte"
   },
-  "minimum-stability": "alpha",
   "require": {
     "php": ">=5.4.0",
     "yiisoft/yii2": ">=2.0.5",
     "yiisoft/yii2-bootstrap": "*",
     "rmrevin/yii2-fontawesome": "2.*",
-    "yiisoft/yii2-bootstrap4": "~1.0.0",
+    "yiisoft/yii2-bootstrap4": "1.0.x@dev",
     "almasaeed2010/adminlte": "3.0.x@alpha"
   },
   "autoload": {
