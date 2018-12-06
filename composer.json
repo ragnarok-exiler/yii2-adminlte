@@ -37,7 +37,7 @@
     "yiisoft/yii2-bootstrap": "*",
     "rmrevin/yii2-fontawesome": "2.*",
     "yiisoft/yii2-bootstrap4": "~1.0.0",
-    "almasaeed2010/adminlte": "^3.0"
+    "almasaeed2010/adminlte": "3.0.x@alpha"
   },
   "autoload": {
     "psr-4": {
